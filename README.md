@@ -13,9 +13,9 @@ ES6 module:
 ```
 import BigNumber from 'bignumber-math-expression'
 
-BigNumber('0.1 + 0.2')					// "0.3"
-BigNumber('0.3 / (0.1 + 0.2)')			// "1"
-BigNumber('2 ** 53 + 1')				// "9007199254740993"
+BigNumber('0.1 + 0.2')                // "0.3"
+BigNumber('0.3 / (0.1 + 0.2)')        // "1"
+BigNumber('2 ** 53 + 1')              // "9007199254740993"
 ```
 
 ## License
