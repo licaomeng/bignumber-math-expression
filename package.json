@@ -1,0 +1,48 @@
+{
+  "name": "bignumber-math-expression",
+  "version": "1.0.0",
+  "description": "A JavaScript library for arbitrary-precision decimal and non-decimal arithmetic with math-expression",
+  "main": "lib/index.js",
+  "typings": "./index.d.ts",
+  "scripts": {
+    "lint": "eslint src --ext .js,.jsx,.tsx",
+    "clean": "rimraf lib",
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "prepublish": "npm run clean && npm run build"
+  },
+  "devDependencies": {
+    "rimraf": "~2.5.4",
+    "typescript": "^3.5.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/licaomeng/bignumber-math-expression.git"
+  },
+  "keywords": [
+    "biginteger",
+    "bignumber",
+    "bigdecimal",
+    "bigint",
+    "bignum",
+    "number",
+    "decimal",
+    "float",
+    "arbitrary",
+    "precision",
+    "arithmetic",
+    "expression"
+  ],
+  "publishConfig": {
+    "registry": "http://registry.npm.alibaba-inc.com"
+  },
+  "author": "Messi Li",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/licaomeng/bignumber-math-expression/issues"
+  },
+  "homepage": "https://github.com/licaomeng/bignumber-math-expression#readme",
+  "dependencies": {
+    "bignumber.js": "^9.0.0"
+  }
+}
