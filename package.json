@@ -33,9 +33,6 @@
     "arithmetic",
     "expression"
   ],
-  "publishConfig": {
-    "registry": "http://registry.npm.alibaba-inc.com"
-  },
   "author": "Messi Li",
   "license": "ISC",
   "bugs": {
