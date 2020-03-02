@@ -1,6 +1,6 @@
 {
   "name": "bignumber-math-expression",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A JavaScript library for arbitrary-precision decimal and non-decimal arithmetic with math-expression",
   "main": "lib/index.js",
   "typings": "./index.d.ts",
@@ -40,6 +40,7 @@
   },
   "homepage": "https://github.com/licaomeng/bignumber-math-expression#readme",
   "dependencies": {
-    "bignumber.js": "^9.0.0"
+    "bignumber.js": "^9.0.0",
+    "invariant": "^2.2.4"
   }
 }

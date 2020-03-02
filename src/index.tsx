@@ -1,4 +1,5 @@
 import BN from 'bignumber.js'
+import invariant from 'invariant'
 const bn = val => new BN(val)
 
 // Algorithm from http://csis.pace.edu/~wolf/CS122/infix-postfix.htm
@@ -53,11 +54,11 @@ function infixToPostfix(exp) {
 }
 
 const operatorMap = {
+  '**': 'pow',
   '+': 'plus',
   '-': 'minus',
   '*': 'times',
   '/': 'div',
-  '**': 'pow',
   '%': 'mod'
 }
 
@@ -84,7 +85,17 @@ function evaluatePostfixExp(postfix) {
   return `${postfix}.toString()`
 }
 
-export default (exp) => eval(evaluatePostfixExp(infixToPostfix(exp)))
+export default (exp) => {
+  const operators = Object.keys(operatorMap)
+  const operands = operators
+    .reduce((ret, op) => ret.replace(op, ' '), exp)
+    .split(/\s+/)
+  invariant(operands.every(item => {
+    const op = Number(item)
+    return (typeof op === 'number' && !isNaN(op) && isFinite(op)) || typeof op === 'boolean'
+  }), 'Operands must be number or boolean.')
+  return eval(evaluatePostfixExp(infixToPostfix(exp)))
+}
 
 
 
