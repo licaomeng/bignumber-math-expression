@@ -85,7 +85,7 @@ function evaluatePostfixExp(postfix) {
   return `${postfix}.toString()`
 }
 
-export default (exp) => {
+module.exports = (exp) => {
   const operators = Object.keys(operatorMap)
   const operands = operators
     .reduce((ret, op) => ret.replace(op, ' '), exp)
@@ -96,8 +96,3 @@ export default (exp) => {
   }), 'Operands must be number or boolean.')
   return eval(evaluatePostfixExp(infixToPostfix(exp)))
 }
-
-
-
-
-
