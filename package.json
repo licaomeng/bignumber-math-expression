@@ -8,8 +8,7 @@
     "lint": "eslint src --ext .js,.jsx,.tsx",
     "clean": "rimraf lib",
     "build": "tsc",
-    "watch": "tsc --watch",
-    "prepublish": "npm run clean && npm run build"
+    "watch": "tsc --watch"
   },
   "devDependencies": {
     "rimraf": "~2.5.4",
