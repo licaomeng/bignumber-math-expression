@@ -24,7 +24,7 @@ jobs:
             - name: "🗑️ clean"
               run: npm run clean
             - name: "🏗 build"
-              run: npm build
+              run: npm run build
             - name: "🚀 publish"
               run: npm publish --access public
               env:
