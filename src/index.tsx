@@ -87,8 +87,8 @@ function evaluatePostfixExp(postfix) {
 
 module.exports = (exp) => {
   const operators = Object.keys(operatorMap)
-  const operands = [...operators, '(', ')']
-    .reduce((ret, op) => ret.replace(op, ' '), exp)
+  const operands = ["\\*\\*", "\\+", "\\-", "\\*", "\\/", "\\%", "\\(", "\\)"]
+    .reduce((ret, op) => ret.replace(new RegExp(op, 'g'), ' '), exp)
     .split(/\s+/)
   invariant(operands.every(item => {
     const op = Number(item)
