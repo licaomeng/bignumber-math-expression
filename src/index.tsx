@@ -33,10 +33,13 @@ function infixToPostfix(exp) {
       }
       continue;
     }
-    // Step 5
+    // Step 5 / 6
     let prevPresedence = presedences.indexOf(topOfStack);
     let currPresedence = presedences.indexOf(token);
-    while (currPresedence < prevPresedence) {
+    while (
+      currPresedence < prevPresedence ||
+      (currPresedence === prevPresedence && ['-', '/', '%', '**'].includes(token))
+    ) {
       let op = opsStack.pop();
       postfix.push(op);
       prevPresedence = presedences.indexOf(opsStack[opsStack.length - 1]);
@@ -86,7 +89,6 @@ function evaluatePostfixExp(postfix) {
 }
 
 module.exports = (exp) => {
-  const operators = Object.keys(operatorMap)
   const operands = ["\\*\\*", "\\+", "\\-", "\\*", "\\/", "\\%", "\\(", "\\)"]
     .reduce((ret, op) => ret.replace(new RegExp(op, 'g'), ' '), exp)
     .split(/\s+/)
